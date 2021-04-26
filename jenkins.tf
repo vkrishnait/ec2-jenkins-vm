@@ -1,8 +1,8 @@
 provider "aws" {
   region  = var.region
 }
-resource "aws_security_group" "JenkinsSG" {
-  name = "Jenkins SG"
+resource "aws_security_group" "JenkinSG" {
+  name = "Jenkin SG"
 
   ingress {
     from_port   = 8080
@@ -29,7 +29,7 @@ resource "aws_security_group" "JenkinsSG" {
 resource "aws_instance" "JenkinsEC2" {
   instance_type          = var.instance_type
   ami                    = data.aws_ami.ubuntu.id
-  vpc_security_group_ids = [aws_security_group.JenkinsSG.id]
+  vpc_security_group_ids = [aws_security_group.JenkinSG.id]
   key_name               = var.ssh_key_name
 
   tags = {

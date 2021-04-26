@@ -2,7 +2,7 @@ provider "aws" {
   region  = var.region
 }
 resource "aws_security_group" "JenkinSG" {
-  name = "Jenkin SG"
+  name = "Jenkin SG1"
 
   ingress {
     from_port   = 8080
@@ -33,9 +33,9 @@ resource "aws_instance" "JenkinsEC2" {
   key_name               = var.ssh_key_name
 
   tags = {
-    Name = "terraform-jenkins-master"
+    Name = "terraform-jenkins"
   }
-  user_data = file("userdata.sh")
+  user_data = file("postscript.sh")
 
 }
 

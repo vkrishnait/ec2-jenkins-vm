@@ -3,15 +3,28 @@
 ## Prerequisites
 
 ### AWS
-1. AWS Account. 
-2. IAM Privileges to provision an EC2 instance.
-3. AWS CLI credentials
-4. SSH Keypair.
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+apt install unzip
+unzip awscliv2.zip
+sudo ./aws/install
+aws --version
+aws configure
 
 ### Terraform
-1. Install Terraform v0.12.28 or greater on your local machine.
-2. AWS Credentials set as environment variables or as shared credentials under /$YOUR_HOME_DIRECTORY/.aws/credentials
+ ##terraform for ubuntu#####
 
+ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+ apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+ apt-get update && sudo apt-get install terraform
+ terraform --help
+ 
+ terraform init
+ terraform plan
+
+ AWS_KV ==> SSHKEY
+
+ 
 ### Jenkins
 1. JDK version 8 or 11.
 2. Allow Port 8080 for Jenkins UI.

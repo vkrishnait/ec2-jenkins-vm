@@ -7,4 +7,8 @@ sudo wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt
 sudo echo "deb https://pkg.jenkins.io/debian-stable binary/" >> /etc/apt/sources.list
 sudo apt-get -y update
 sudo apt-get -y install jenkins
+sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get -y update && sudo apt-get -y install terraform
 

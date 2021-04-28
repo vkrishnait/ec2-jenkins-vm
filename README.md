@@ -2,6 +2,10 @@
 
 ## Prerequisites
 
+###GI
+
+git clone https://github.com/vkrishnait/ec2-jenkins-vm.git
+
 ### AWS
 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -21,6 +25,9 @@ aws configure
  
  terraform init
  terraform plan
+ terraform apply --auto-approve
+ terraform destory --auto-approve
+  
 
  AWS_KV ==> SSHKEY
 
